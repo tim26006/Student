@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <title>StudentHelper</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% load static %}
+     <link type="image/x-icon" href="{% static 'icon.gif' %}" rel="shortcut icon">
+    <link type="Image/x-icon" href="{% static 'icon.gif' %}" rel="icon">
+    <link rel="stylesheet" href="{% static 'student.css' %}">
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo"></div>
+        <div class="student_name">Сидорин Тимофей</div>
+        <div class="group">2ИТБ-2</div>
+        <div class="line"></div>
+        <div class="grant_text">Расчитанная стипендия <br> в текущем семестре:</div>
+        <div class="grant">10 086₽</div>
+    </div>
+
+    <div class="block-content">
+        <div class="content">
+            <div class="menu">
+                <div class="head">
+                    <div class="template-block block"><a href="/basa/templ" class="templates">Шаблоны титульников</a></div>
+                    <div class="way-block block"><a href="#way" class="way">Мой путь учения</a></div>
+                    <div class="gen-block block"><a href="/basa/gen/" class="generator">Генератор списка источников</a></div>
+                </div>
+
+            </div>
+            <div class="tabs">
+                <div  class="block1">
+
+
+                    <div class="text_templ">Здесь вы можете скачать заполненные титульники для всех предметов текущего года</div>
+
+                   <div class="cards">
+                       {%for key, value_list in new_dict.items %}
+                        <div class="card" style="width: 17rem;  margin-left:30px; border-radius:15px; margin-top:30px; margin-bottom:10px; ">
+                      <div class="card-header " style = "font-family: SF Pro Display; text-align:center; color:#381F61;  ">
+                        {{key}}
+                      </div>
+                      <ul class="list-group list-group-flush" style="border-radius:15px;">
+                          {% for i in value_list %}
+
+                        <li class="list-group-item"> <a href="{% static 'subject_templates/'|add:i.path %}" download="">
+                          {{ i.type }}  <img  src="{% static 'down.svg' %}" alt="" width="16"/>
+                    </a>
+                        </li>
+
+                          {% endfor %}
+
+                      </ul>
+                    </div>
+                        {% endfor %}
+                   </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
