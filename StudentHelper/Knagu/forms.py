@@ -6,5 +6,5 @@ class Autorization(forms.Form):
     password = forms.CharField(max_length=50,label="",widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Пароль"}))
 
 
-# class Gpt(forms.Form):
-#     theme = forms.CharField(max_length=50, label="", widget=forms.TextInput(attrs={"class":"gpt-form","placeholder":"Введи тему"}))
+class Gpt(forms.Form):
+    theme = forms.CharField(max_length=50, label="", widget=forms.TextInput(attrs={"class":"form-control","placeholder":"Введи тему"}))

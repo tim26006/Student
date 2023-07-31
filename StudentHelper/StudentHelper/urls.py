@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework.routers import SimpleRouter
 from Knagu import views
-from Knagu.views import index_page, gen
+from Knagu.views import index_page, gen, list_of_info
 from Knagu.views import get_data
 
 
@@ -28,7 +28,8 @@ urlpatterns = [
     path('', index_page),
     path('admin/', admin.site.urls),
     path('basa/templ', get_data),
-    path('basa/gen/', gen)
+    path('basa/gen', gen),
+    path('basa/gen/list', list_of_info)
 
 
 

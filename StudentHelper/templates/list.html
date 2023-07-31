@@ -8,6 +8,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     {% load static %}
+
     <link type="image/x-icon" href="{% static 'icon.gif' %}" rel="shortcut icon">
     <link type="Image/x-icon" href="{% static 'icon.gif' %}" rel="icon">
     <link rel="stylesheet" href="{% static 'student.css' %}">
@@ -32,30 +33,23 @@
                 </div>
 
             </div>
-            <div class="tabs">
-                <div  class="block1">
-                    <div class="text_gen">Просто введи тему работы! Приложение само найдёт источники литературы</div>
-
-                </div>
-
-
+            {% csrf_token %}
+            <div class="container">
+            <ol class="rounded" id="myList">
+            {%for num,li in theme.items%}
+            <li class="hover"><a>{{li}}</a></li>
+            {% endfor %}
+            </ol>
             </div>
-             <form class="row g-3" action="/basa/gen/list" method="post">
-                        {% csrf_token %}
-                      <div class="col-auto">
-                        <input type="text" class="form-control" id="inputPassword2" placeholder="Тема:" name="theme">
-                      </div>
-                      <div class="col-auto">
-                        <button type="submit" class="btn btn-primary mb-3">искать &#128269;</button>
-                      </div>
-                    </form>
-            <div class="img_gpt">
-                <img class="gpt_img" src="{% static 'res.png' %}" >
+        <div class="navigation">
+            <img id="copyButton" src="{% static 'copy.png' %}" alt="Копировать текст">
+             <a href="/basa/gen"><img id="backButton" src="{% static 'back.png' %}" alt=""></a>
             </div>
         </div>
 
     </div>
 
-
+<script src="{% static 'copy.js' %}"></script>
 </body>
+
 </html>

@@ -17,22 +17,21 @@ def parseLK(username: str, password: str, course: int) -> dict:
     driver = webdriver.Chrome(service=webdriver_service)
 
     driver.get("https://student.knastu.ru/")
-
     driver.find_element_by_css_selector("input[type=text]").send_keys(username)
     driver.find_element_by_css_selector("input[type=password]").send_keys(password)
-    time.sleep(1)
+
     driver.find_element_by_css_selector("button[type=submit]").click()
     time.sleep(5)
-    if course==1:
-        driver.find_elements_by_xpath(".//button[@class='select_course__btn btn btn-primary']")[0].click()
-    if course==2:
-        driver.find_elements_by_xpath(".//button[@class='select_course__btn btn btn-outline-primary']")[0].click()
-    if course == 3:
-        driver.find_elements_by_xpath(".//button[@class='select_course__btn btn btn-outline-primary']")[1].click()
-    if course == 4:
-        driver.find_elements_by_xpath(".//button[@class='select_course__btn btn btn-outline-primary']")[2].click()
+    # if course==1:
+    #     driver.find_elements_by_xpath(".//button[@class='select_course__btn btn btn-primary']")[0].click()
+    # if course==2:
+    #     driver.find_elements_by_xpath(".//button[@class='select_course__btn btn btn-outline-primary']")[0].click()
+    # if course == 3:
+    #     driver.find_elements_by_xpath(".//button[@class='select_course__btn btn btn-outline-primary']")[1].click()
+    # if course == 4:
+    #     driver.find_elements_by_xpath(".//button[@class='select_course__btn btn btn-outline-primary']")[2].click()
 
-    time.sleep(5)
+    # time.sleep(5)
 
     html = driver.page_source
     soup = BeautifulSoup(html, "html.parser")
