@@ -13,7 +13,7 @@ def edit_template(sub:str,type_sub:str):
         "по дисциплине «Математический анализ»":f"по дисциплине «{sub}»"
     }
 
-    doc = docx.Document("/Users/timofeymac/PycharmProjects/Student/StudentHelper/Knagu/static/subject_templates/sample.docx")
+    doc = docx.Document("./Knagu/static/subject_templates/sample.docx")
 
 
     style = doc.styles['Normal']
@@ -26,4 +26,4 @@ def edit_template(sub:str,type_sub:str):
             if p.text.find(replace_elem) >=0:
                 p.text = p.text.replace(replace_elem,replace_dict[replace_elem])
     file = f"{sub}-{type_sub}-.docx"
-    doc.save("/Users/timofeymac/PycharmProjects/Student/StudentHelper/Knagu/static/subject_templates/"+file)
+    doc.save("./Knagu/static/subject_templates/"+file)

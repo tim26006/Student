@@ -1,12 +1,11 @@
 from django.shortcuts import render
 # Create your views here.
 from .forms import Autorization
-from RETURN_SUB import *
-from titulnikKnagu  import *
-from GetDir import *
-import os
-from GptResponse import *
-from Knagu.models import Sub
+from SERVICES.RETURN_SUB import *
+from SERVICES.titulnikKnagu import *
+from SERVICES.GetDir import *
+from SERVICES.GptResponse import *
+from SERVICES.AddStudent import addStudent
 
 
 def index_page(request):
@@ -30,6 +29,14 @@ def get_data(request):
             if not(sub[1] == "Зачет" or sub[1] == "Экзамен" or sub[1] == "Итоговая оценка"):
                 edit_template(sub=sub[0],type_sub=sub[1])
         name_student = out_info["student"]
+        group = out_info["group"]
+
+
+
+        addStudent(name_student,group) # добавляем нового студента в бд
+
+
+
 
     all_subjects_name = GetDir()
     new_dict = {}
