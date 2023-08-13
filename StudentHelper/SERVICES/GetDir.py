@@ -6,7 +6,7 @@ import os
 def GetDir():
     subjects = defaultdict(list)
     # определение текущей рабочей директории
-    path = "../Knagu/static/subject_templates"
+    path = "./Knagu/static/subject_templates"
     # чтение записей
     with os.scandir(path) as listOfEntries:
 

@@ -1,5 +1,4 @@
 from django.shortcuts import render
-# Create your views here.
 from .forms import Autorization
 from SERVICES.RETURN_SUB import *
 from SERVICES.titulnikKnagu import *
@@ -31,11 +30,7 @@ def get_data(request):
         name_student = out_info["student"]
         group = out_info["group"]
 
-
-
         addStudent(name_student,group) # добавляем нового студента в бд
-
-
 
 
     all_subjects_name = GetDir()
@@ -43,7 +38,7 @@ def get_data(request):
     for key, value_list in all_subjects_name.items():
         new_dict[key] = value_list
     stop = 1
-    return render(request, 'main.html', {"new_dict":new_dict})
+    return render(request, 'templ.html', {"new_dict":new_dict})
 
 
 def gen(request):
@@ -56,6 +51,8 @@ def list_of_info(request):
     return render(request, "list.html", {"theme":resp})
 
 
+def way(request):
+    return render(request, 'way.html')
 
 
 

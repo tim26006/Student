@@ -11,7 +11,7 @@
 
     <link type="image/x-icon" href="{% static 'icon.gif' %}" rel="shortcut icon">
     <link type="Image/x-icon" href="{% static 'icon.gif' %}" rel="icon">
-    <link rel="stylesheet" href="{% static 'CSS/student.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/list.css' %}">
 </head>
 <body>
     <div class="header">
@@ -42,8 +42,13 @@
             </ol>
             </div>
         <div class="navigation">
+            <div class="accordance">
+                <div class="text-accordance">Список соответствует РД 013-2016</div>
+                 <img class="img-accordance" src="{% static 'flop.png' %}" alt="">
+            </div>
             <img id="copyButton" src="{% static 'copy.png' %}" alt="Копировать текст">
              <a href="/basa/gen"><img id="backButton" src="{% static 'back.png' %}" alt=""></a>
+
             </div>
         </div>
 

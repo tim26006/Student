@@ -124,4 +124,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-GPT_TOKEN = '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'
+GPT_TOKEN = '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'
