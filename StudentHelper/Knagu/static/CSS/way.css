@@ -161,14 +161,14 @@ body{
 }
 
 .templates{
-    color:white;
+    color:black;
     font-family: SF Pro Display;
     font-size:0.9 rem;
 
 }
 
 .way{
-    color:black;
+    color:white;
     font-family: SF Pro Display;
     font-size:0.9 rem;
 
@@ -178,6 +178,8 @@ body{
 
     border-left: 3px solid #381F61;/* Левая рамка шириной 2 пикселя с синим цветом */
     border-right: 3px solid #381F61;
+    background-color:#2644B1 ;/* Начальный цвет блока */
+    animation: fadeInColor 0.7s ease-out;
 }
 
 
@@ -186,7 +188,6 @@ body{
 
 
 .generator{
-
     color:black;
     font-family: SF Pro Display;
     font-size:0.9 rem;
@@ -225,9 +226,8 @@ body{
 
 .template-block{
     border-top-left-radius: 38px;
-    background-color:#2644B1 ;
-     background-color:#2644B1 ;/* Начальный цвет блока */
-     animation: fadeInColor 0.7s ease-out; /* Анимация длительностью 2 секунды с плавным переходом */
+
+      /* Анимация длительностью 2 секунды с плавным переходом */
 }
 
 
@@ -241,18 +241,6 @@ body{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .gen-block{
 
      background-color:#2644B1 ;
@@ -260,49 +248,24 @@ body{
 }
 
 
-
-
 .no_active{
      background-color:  white;
-}
-
-.cards{
-    display:flex;
-    flex-wrap: wrap;
-
-
-}
-
-.card{
-
-
-    transition: all  0.5s;
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 1px solid   rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
-
-
+     color:black;
 }
 
 
-.card:hover{
-    transform: scale(1.1);
-    background-color: rgba(255, 255, 255, 0.8);
-    transition: all 0.5s;
-    border: 2px solid  #381F61;
-}
-
-.tabs{
-
-}
-
-.list-group-item{
-    text-align:center;
-}
 
 
-.card-header{
 
-}
+
+
+
+
+
+
+
+
+
+
+
 

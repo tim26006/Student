@@ -51,6 +51,9 @@ def list_of_info(request):
     return render(request, "list.html", {"theme":resp})
 
 
+
+
+
 def way(request):
     return render(request, 'way.html')
 

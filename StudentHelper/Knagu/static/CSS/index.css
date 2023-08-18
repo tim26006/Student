@@ -147,6 +147,7 @@ width:200px;
     display: none; /* Изменено значение */
     justify-content: center;
     align-items: center;
+
 }
 
 .loader {
