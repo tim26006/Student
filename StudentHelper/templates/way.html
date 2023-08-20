@@ -1,0 +1,17 @@
+{% extends "header.html" %}
+    {% block content %}
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/way.css' %}">
+    <div class="block-content">
+        <div class="content">
+            <div class="menu">
+                <div class="head">
+                    <div class="templ-block block no_active"><a href="/basa/templ" class="templates">Шаблоны титульников</a></div>
+                    <div class="way-block block "><a href="/basa/way" class="way">Мой путь учения</a></div>
+                    <div class="gen-block block no_active"><a href="/basa/gen" class="generator">Генератор списка источников</a></div>
+                </div>
+            </div>
+
+     </div>
+
+  {% endblock %}

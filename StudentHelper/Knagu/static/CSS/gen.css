@@ -7,19 +7,16 @@ a, a:link, a:visited  {
     text-decoration: none;
 }
 
-
 a {
-  color: #000; /* Цвет текста ссылки (черный) */
-  text-decoration: none; /* Убираем подчеркивание ссылки */
+  color: #000;
+  text-decoration: none;
 }
 
-/* Стили для ссылки при наведении (переопределяем стили) */
+
 a:hover {
-  text-decoration: none; /* Убираем подчеркивание ссылки при наведении */
-  color: #000; /* Можно оставить тот же цвет текста или указать другой черный (#000) */
+  text-decoration: none;
+  color: #000;
 }
-
-
 
 ul,
 ol,
@@ -40,7 +37,6 @@ body{
   height: 100%;
   overflow: auto;
   background: url("./temp.jpg");
-
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -68,7 +64,7 @@ body{
     width: 80px;
     height: 80px;
     margin-left: 60px;
-    background: url("/static/ava.jpg");
+    background-image: url("/static/ava.jpg");
     border-radius:50%;
     background-repeat: no-repeat;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.30);
@@ -174,15 +170,12 @@ body{
 
 }
 
+
 .way-block {
 
-    border-left: 3px solid #381F61;/* Левая рамка шириной 2 пикселя с синим цветом */
+    border-left: 3px solid #381F61; /* Левая рамка шириной 2 пикселя с синим цветом */
     border-right: 3px solid #381F61;
 }
-
-
-
-
 
 
 .generator{
@@ -224,10 +217,15 @@ body{
 }
 
 .template-block{
+
     border-top-left-radius: 38px;
     background-color:#2644B1 ;
-     background-color:#2644B1 ;/* Начальный цвет блока */
-     animation: fadeInColor 0.7s ease-out; /* Анимация длительностью 2 секунды с плавным переходом */
+}
+
+.gen-block{
+        border-top-right-radius: 38px;
+        background-color:#2644B1 ;/* Начальный цвет блока */
+        animation: fadeInColor 0.7s ease-out; /* Анимация длительностью 2 секунды с плавным переходом */
 }
 
 
@@ -241,68 +239,160 @@ body{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-.gen-block{
-
-     background-color:#2644B1 ;
-    border-top-right-radius: 38px;
-}
-
-
-
-
 .no_active{
      background-color:  white;
 }
 
-.cards{
-    display:flex;
-    flex-wrap: wrap;
-
-
-}
-
-.card{
-
-
-    transition: all  0.5s;
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 1px solid   rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
-
-
-}
-
-
-.card:hover{
-    transform: scale(1.1);
-    background-color: rgba(255, 255, 255, 0.8);
-    transition: all 0.5s;
-    border: 2px solid  #381F61;
-}
-
-.tabs{
-
-}
 
 .list-group-item{
     text-align:center;
 }
 
 
-.card-header{
+
+.row{
+  margin-left:55px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display:flex;
+}
+
+.form-control{
+    height:50px;
+    width:400px;
+    font-family: SF Pro Display;
+    font-size: 1.1rem;
+    color:#381F61 ;
+    border-radius:15px;
+    -webkit-box-shadow: -1px 4px 37px 0px rgba(26, 63, 255, 0.4);
+    -moz-box-shadow: -1px 4px 37px 0px rgba(26, 63, 255, 0.4);
+    box-shadow: -1px 4px 37px 0px rgba(26, 63, 255, 0.4);
 
 }
+
+.btn{
+    font-family: SF Pro Display;
+    font-size: 1.1rem;
+    color:#f3f3f3 ;
+     background-color:#2644B1;
+    border-radius:15px;
+    text-align:center;
+    height:50px;
+    -webkit-box-shadow: -1px 4px 37px 0px rgba(26, 63, 255, 0.4);
+    -moz-box-shadow: -1px 4px 37px 0px rgba(26, 63, 255, 0.4);
+    box-shadow: -1px 4px 37px 0px rgba(26, 63, 255, 0.4);
+}
+
+
+
+
+.text_gen{
+    margin-top:110px;
+    font-family: SF Pro Display;
+    font-size: 1.3rem;
+    text-align:center;
+    color:#381F61 ;
+}
+
+.img_gpt{
+
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+       margin-top:180px;
+}
+
+
+
+input[type="text"] {
+  font-family: SF Pro Display;
+  font-size: 1em;
+
+  margin: 0;
+}
+
+
+.cloud{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    top: 50px;
+    width:320px;
+    height: 100px;
+    background: #2644B1;
+    border-radius:  100px;
+    z-index:100;
+    filter: drop-shadow( 0 0 35px #2644B1);
+}
+
+.cloud:before{
+    content: " ";
+    position: absolute;
+    top:-50px;
+    left:40px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #2644B1;
+    box-shadow: 90px 0 0 30px #2644B1;
+
+}
+
+
+.text
+{
+    position:absolute;
+    height: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #000;
+    text-shadow: 0 0 5px #fff,
+    0 0 15px #fff,
+    0 0 30px #fff;
+    transform-origin: bottom;
+    animation: animate 2s linear forwards;
+
+}
+
+@keyframes animate
+{
+ 0%
+ {
+  transform: translateY(0) scale(1);
+ }
+
+ 70%
+ {
+  transform: translateY(290px) scale(1);
+ }
+
+ 100%
+ {
+  transform: translateY(290px) scale(0);
+ }
+
+}
+
+.loader-overlay{
+   position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none; /* Изменено значение */
+
+
+}
+
+
+
+
+
+
+
+
 
