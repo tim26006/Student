@@ -12,7 +12,7 @@ def parseLK(username: str, password: str, course: int) -> dict:
     """ Данный веб-сервис берёт информацию с личного кабинета студента"""
 
     return_dict = {}
-    webdriver_service = Service('./chromedriver')
+    webdriver_service = Service('./chromedriver.exe')
 
     driver = webdriver.Chrome(service=webdriver_service)
 

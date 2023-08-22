@@ -37,7 +37,10 @@ def get_data(request):
     new_dict = {}
     for key, value_list in all_subjects_name.items():
         new_dict[key] = value_list
+
     stop = 1
+
+
     return render(request, 'templ.html', {"new_dict":new_dict})
 
 
