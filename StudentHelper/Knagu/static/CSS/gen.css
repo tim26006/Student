@@ -11,9 +11,9 @@
 
 .content{
     position: relative;
-    width: 1240px;
-    height: 570px;
-    background: rgba(255, 255, 255, 0.3);
+    width: 1400px;
+    height: 650px;
+   background-image: radial-gradient(at 100% 0%, rgba(46,110,173,0.99) 0px, transparent 50%),radial-gradient(at 92% 64%, rgba(11,30,80,0.69) 0px, transparent 50%),radial-gradient(at 35% 0%, #0c215a 0px, transparent 50%),radial-gradient(at 0% 0%, #06061d 0px, transparent 50%),radial-gradient(at 76% 0%, #061232 0px, transparent 50%),radial-gradient(at 86% 47%, #0b0f32 0px, transparent 50%),radial-gradient(at 43% 59%, #0b0f32 0px, transparent 50%),radial-gradient(at 6% 100%, #311f47 0px, transparent 50%),radial-gradient(at 42% 100%, #06061d 0px, transparent 50%),radial-gradient(at 1% 53%, #0b0f32 0px, transparent 50%),radial-gradient(at 100% 100%, #0c133b 0px, transparent 50%),radial-gradient(at 63% 100%, #1e1335 0px, transparent 50%),radial-gradient(at 20% 100%, #1e1335 0px, transparent 50%);
     box-shadow: 0px 2px 17px rgba(0, 0, 0, 0.40);
     border-radius: 40px;
     overflow: auto;
@@ -32,19 +32,22 @@
     border-top-right-radius: 40px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.30);
     overflow: hidden;
+    border: 1px solid white;
 }
 
 .templates{
-    color:white;
+    color:black;
     font-family: SF Pro Display;
     font-size:0.9 rem;
+    font-weight: 700;
 
 }
 
 .way{
-    color:black;
+    color:white;
     font-family: SF Pro Display;
     font-size:0.9 rem;
+    font-weight: 700;
 
 }
 
@@ -57,10 +60,10 @@
 
 
 .generator{
-
     color:black;
     font-family: SF Pro Display;
     font-size:0.9 rem;
+    font-weight: 700;
 
 }
 
@@ -80,7 +83,7 @@
     font-family: SF Pro Display;
     font-size: 1.3rem;
     text-align:center;
-    color:#381F61 ;
+    color:white ;
 }
 
 
@@ -102,23 +105,24 @@
 
 .gen-block{
         border-top-right-radius: 38px;
-        background-color:#2644B1 ;/* Начальный цвет блока */
+        background-color:white ;/* Начальный цвет блока */
         animation: fadeInColor 0.7s ease-out; /* Анимация длительностью 2 секунды с плавным переходом */
 }
 
 
 @keyframes fadeInColor {
   0% {
-     background-color:  white; /* Начальный цвет блока */
+     background-color:  rgba(22,22,23,0.95) ; /* Начальный цвет блока */
   }
   100% {
-   background-color:#2644B1 ; /* Конечный цвет блока */
+   background-color:white; /* Конечный цвет блока */
   }
 }
 
 
 .no_active{
-     background-color:  white;
+     background: rgba(22,22,23,0.95);
+     color:white;
 }
 
 
@@ -169,9 +173,10 @@
 .text_gen{
     margin-top:110px;
     font-family: SF Pro Display;
-    font-size: 1.3rem;
     text-align:center;
-    color:#381F61 ;
+    font-size: 1.6rem;
+    color: white;
+    font-weight: bold;
 }
 
 .img_gpt{

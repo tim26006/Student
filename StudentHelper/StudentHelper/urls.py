@@ -21,13 +21,13 @@ from Knagu import views
 from Knagu.views import index_page, gen, list_of_info
 from Knagu.views import get_data
 from  Knagu.views import way
-
+from  Knagu.views import templ
 
 urlpatterns = [
     path('submit/', views.get_data, name='submit'),
     path('', index_page),
     path('admin/', admin.site.urls),
-    path('basa/templ', get_data),
+    path('basa/templ', templ),
     path('basa/gen', gen),
     path('basa/gen/list', list_of_info),
     path('basa/way', way)

@@ -8,23 +8,27 @@
     margin-top: 60px;
     align-items:center;
     justify-content:center;
+    overflow: hidden;
+
 }
 
 .content{
     position: relative;
-    width: 1240px;
-    height: 570px;
-    background: rgba(255, 255, 255, 0.3);
+     width: 1400px;
+    height: 650px;
+   background-image: radial-gradient(at 100% 0%, rgba(46,110,173,0.99) 0px, transparent 50%),radial-gradient(at 92% 64%, rgba(11,30,80,0.69) 0px, transparent 50%),radial-gradient(at 35% 0%, #0c215a 0px, transparent 50%),radial-gradient(at 0% 0%, #06061d 0px, transparent 50%),radial-gradient(at 76% 0%, #061232 0px, transparent 50%),radial-gradient(at 86% 47%, #0b0f32 0px, transparent 50%),radial-gradient(at 43% 59%, #0b0f32 0px, transparent 50%),radial-gradient(at 6% 100%, #311f47 0px, transparent 50%),radial-gradient(at 42% 100%, #06061d 0px, transparent 50%),radial-gradient(at 1% 53%, #0b0f32 0px, transparent 50%),radial-gradient(at 100% 100%, #0c133b 0px, transparent 50%),radial-gradient(at 63% 100%, #1e1335 0px, transparent 50%),radial-gradient(at 20% 100%, #1e1335 0px, transparent 50%);
     box-shadow: 0px 2px 17px rgba(0, 0, 0, 0.40);
     border-radius: 40px;
     overflow: auto;
+
 }
 
 
 
-.menu{
-    align-items: center;
 
+.menu{
+    position:absolute;
+    align-items: center;
     display:flex;
     background-color:#D9D9D9;
     height: 45px;
@@ -32,39 +36,52 @@
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.30);
-    overflow: hidden;
+    position: fixed;
+    width:1400px;
+    flex 1 1 auto;
+    z-index:100;
+    border: 1px solid white;
+
 }
 
 .templates{
-    color:white;
+    color:black;
     font-family: SF Pro Display;
     font-size:0.9 rem;
+    font-weight: 700;
+
+}
+
+
+.listTag{
+    color:black;
+    font-family: SF Pro Display;
+    font-size:1.2rem;
+    font-weight: 300;
+    text-transform:lowercase;
 
 }
 
 .way{
-    color:black;
+    color:white;
     font-family: SF Pro Display;
     font-size:0.9 rem;
+    font-weight: 700;
 
 }
 
 .way-block {
 
-    border-left: 3px solid #381F61;/* Левая рамка шириной 2 пикселя с синим цветом */
-    border-right: 3px solid #381F61;
+    border-left: 3px solid white;/* Левая рамка шириной 2 пикселя с синим цветом */
+    border-right: 3px solid white;
 }
-
-
-
-
-
 
 .generator{
 
-    color:black;
+    color:white;
     font-family: SF Pro Display;
     font-size:0.9 rem;
+    font-weight: 700;
 
 }
 
@@ -84,7 +101,9 @@
     font-family: SF Pro Display;
     font-size: 1.3rem;
     text-align:center;
-    color:#381F61 ;
+    color:white;
+    font-weight: bold;
+    padding-top:40px;
 }
 
 
@@ -100,61 +119,52 @@
 
 .template-block{
     border-top-left-radius: 38px;
-    background-color:#2644B1 ;
-     background-color:#2644B1 ;/* Начальный цвет блока */
+     background-color:white ;
+     /* Начальный цвет блока */
      animation: fadeInColor 0.7s ease-out; /* Анимация длительностью 2 секунды с плавным переходом */
 }
 
 
 @keyframes fadeInColor {
   0% {
-     background-color:  white; /* Начальный цвет блока */
+     background-color:  rgba(22,22,23,0.95) ; /* Начальный цвет блока */
   }
   100% {
-   background-color:#2644B1 ; /* Конечный цвет блока */
+   background-color:white; /* Конечный цвет блока */
   }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 .gen-block{
 
      background-color:#2644B1 ;
-    border-top-right-radius: 38px;
+    border-top-right-radius: 40px;
 }
 
 
 
 
 .no_active{
-     background-color:  white;
+     background: rgba(22,22,23,0.95);
+     color:white;
 }
 
 .cards{
     display:flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
+    justify-content:center;
 
 
 }
 
 .card{
 
+ transition: all  0.5s;
+   background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 1px 1px rgba(221, 221, 221, 0.8);
 
-    transition: all  0.5s;
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 1px solid   rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
 
 
 
@@ -168,6 +178,23 @@
     border: 2px solid  #381F61;
 }
 
+.list-group-item{
+
+    background-color:white;
+
+}
+
+.card-header {
+
+  background: #D3CCE3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+
+
 .tabs{
 
 }
@@ -177,7 +204,7 @@
 }
 
 
-.card-header{
 
-}
+
+
 

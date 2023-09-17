@@ -8,11 +8,12 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
+
 def parseLK(username: str, password: str, course: int) -> dict:
     """ Данный веб-сервис берёт информацию с личного кабинета студента"""
-
+    course = 1
     return_dict = {}
-    webdriver_service = Service('./chromedriver.exe')
+    webdriver_service = Service('./chromedriver')
 
     driver = webdriver.Chrome(service=webdriver_service)
 
@@ -22,8 +23,6 @@ def parseLK(username: str, password: str, course: int) -> dict:
 
     driver.find_element_by_css_selector("button[type=submit]").click()
     time.sleep(5)
-    # if course==1:
-    #     driver.find_elements_by_xpath(".//button[@class='select_course__btn btn btn-primary']")[0].click()
     # if course==2:
     #     driver.find_elements_by_xpath(".//button[@class='select_course__btn btn btn-outline-primary']")[0].click()
     # if course == 3:

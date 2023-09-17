@@ -107,6 +107,7 @@ body{
 margin-top:45px;
 size:30px;
  font-family: SF Pro Display;
+ font-weight: 700;
 
 
 }
@@ -125,6 +126,7 @@ size:30px;
     padding-top: 30px;
     text-align: center;
     color: white;
+     font-weight: 700;
 
 }
 .form{

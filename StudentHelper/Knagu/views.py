@@ -6,6 +6,8 @@ from SERVICES.GetDir import *
 from SERVICES.GptResponse import *
 from SERVICES.AddStudent import addStudent
 
+stop = 0
+new_dict = {}
 
 def index_page(request):
     if request.method == 'POST':
@@ -15,33 +17,39 @@ def index_page(request):
     return render(request, "index.html", {'form': form})
 
 
-stop = 0
+
 def get_data(request):
     global stop
+
     if stop == 0:
         form = Autorization(request.POST)
         login = form['login'].value()
         password = form['password'].value()
         out_info = parseLK(username=login, password=password, course=1)
+        name_student = out_info["student"]
+        group = out_info["group"]
         for item in out_info["marks"]:
             sub = item.split("_")
             if not(sub[1] == "Зачет" or sub[1] == "Экзамен" or sub[1] == "Итоговая оценка"):
-                edit_template(sub=sub[0],type_sub=sub[1])
-        name_student = out_info["student"]
-        group = out_info["group"]
+                edit_template(sub=sub[0],type_sub=sub[1],group = group)
+
+
 
         addStudent(name_student,group) # добавляем нового студента в бд
 
 
     all_subjects_name = GetDir()
-    new_dict = {}
+    global new_dict
     for key, value_list in all_subjects_name.items():
         new_dict[key] = value_list
 
     stop = 1
 
+    return render(request, 'way.html')
 
-    return render(request, 'templ.html', {"new_dict":new_dict})
+
+def way(request):
+    return render (request,"way.html")
 
 
 def gen(request):
@@ -57,8 +65,8 @@ def list_of_info(request):
 
 
 
-def way(request):
-    return render(request, 'way.html')
+def templ(request):
+    return render(request, 'templ.html', {"new_dict":new_dict})
 
 
 

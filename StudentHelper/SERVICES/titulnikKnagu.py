@@ -3,14 +3,15 @@ import docx
 import os
 
 
-def edit_template(sub:str,type_sub:str):
+def edit_template(sub:str,type_sub:str, group:str)->None:
     if type_sub=='Контрольная':
-        typi_sub = "КОНТРОЛЬНАЯ РАБОТА"
+        type_sub = "КОНТРОЛЬНАЯ РАБОТА"
     if type_sub=='РГР':
-        typi_sub = "РАСЧЁТНО - ГРАФИЧЕСКАЯ РАБОТА"
+        type_sub = "РАСЧЁТНО-ГРАФИЧЕСКАЯ РАБОТА"
     replace_dict = {
-        "РАБОТА": typi_sub,
-        "по дисциплине «Математический анализ»":f"по дисциплине «{sub}»"
+        "РАБОТА": type_sub,
+        "по дисциплине «Математический анализ»":f"по дисциплине «{sub}»",
+        "2ИТБ-2": group
     }
 
     doc = docx.Document("./Knagu/static/subject_templates/sample.docx")
@@ -25,5 +26,5 @@ def edit_template(sub:str,type_sub:str):
         for p in doc.paragraphs:
             if p.text.find(replace_elem) >=0:
                 p.text = p.text.replace(replace_elem,replace_dict[replace_elem])
-    file = f"{sub}-{type_sub}-.docx"
+    file = f"{sub}*{type_sub}*.docx"
     doc.save("./Knagu/static/subject_templates/"+file)

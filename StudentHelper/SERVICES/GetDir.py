@@ -12,10 +12,12 @@ def GetDir():
 
         for entry in listOfEntries:
             if entry.is_file() and not(entry.name == "sample.docx") :
-                sub = entry.name.split("-")[0]
+                sub = entry.name.split("*")[0]
                 p = os.path.abspath(entry.name)
                 file_url = str(entry.name)
-                subjects[sub].append({"type": entry.name.split("-")[1],"path":file_url})
+                if (entry.name == ".DS_Store"):
+                    continue
+                subjects[sub].append({"type": entry.name.split("*")[1],"path":file_url})
 
 
     return subjects

@@ -17,19 +17,18 @@
             <div class="tabs">
                 <div  class="block1">
 
-
                     <div class="text_templ">Здесь вы можете скачать заполненные титульники для всех предметов текущего года</div>
 
                    <div class="cards">
                        {%for key, value_list in new_dict.items %}
-                        <div class="card" style="width: 17rem;  margin-left:30px; border-radius:15px; margin-top:30px; margin-bottom:10px; ">
-                      <div class="card-header " style = "font-family: SF Pro Display; text-align:center; color:#381F61;  ">
+                        <div class="card" style="width: 21rem;  margin-left:30px; border-radius:15px; margin-top:30px; margin-bottom:10px; ">
+                      <div class="card-header " style = "font-family: SF Pro Display; text-align:center; color:#381F61; font-weight: 500; font-size:1.2rem;  border-top-right-radius:15px;  border-top-left-radius:15px;">
                         {{key}}
                       </div>
                       <ul class="list-group list-group-flush" style="border-radius:15px;">
                           {% for i in value_list %}
 
-                        <li class="list-group-item"> <a href="{% static 'subject_templates/'|add:i.path %}" download="">
+                        <li class="list-group-item"> <a class="listTag" href="{% static 'subject_templates/'|add:i.path %}" download="">
                           {{ i.type }}  <img  src="{% static 'down.svg' %}" alt="" width="16"/>
                     </a>
                         </li>
