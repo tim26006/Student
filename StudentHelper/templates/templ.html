@@ -11,6 +11,7 @@
                     <div class="template-block block"><a href="/basa/templ" class="templates">Шаблоны титульников</a></div>
                     <div class="way-block block no_active"><a href="/basa/way" class="way">Мой путь учения</a></div>
                     <div class="gen-block block no_active"><a href="/basa/gen" class="generator">Генератор списка источников</a></div>
+                    <div class="todo-block block no_active"><a href="/basa/todo" class="todo">Список задач</a></div>
                 </div>
 
             </div>
@@ -25,7 +26,7 @@
                       <div class="card-header " style = "font-family: SF Pro Display; text-align:center; color:#381F61; font-weight: 500; font-size:1.2rem;  border-top-right-radius:15px;  border-top-left-radius:15px;">
                         {{key}}
                       </div>
-                      <ul class="list-group list-group-flush" style="border-radius:15px;">
+                      <ul class="list-group list-group-flush" style="">
                           {% for i in value_list %}
 
                         <li class="list-group-item"> <a class="listTag" href="{% static 'subject_templates/'|add:i.path %}" download="">

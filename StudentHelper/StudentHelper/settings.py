@@ -125,4 +125,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-GPT_TOKEN = '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'
+# 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
+
+GPT_TOKEN = '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'

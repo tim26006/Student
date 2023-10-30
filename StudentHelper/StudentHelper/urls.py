@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework.routers import SimpleRouter
 from Knagu import views
-from Knagu.views import index_page, gen, list_of_info
+from Knagu.views import index_page, gen, list_of_info, todo, add
 from Knagu.views import get_data
 from  Knagu.views import way
 from  Knagu.views import templ
@@ -30,7 +30,9 @@ urlpatterns = [
     path('basa/templ', templ),
     path('basa/gen', gen),
     path('basa/gen/list', list_of_info),
-    path('basa/way', way)
+    path('basa/way', way),
+    path('basa/todo',todo),
+    path('basa/add',add),
 
 
 

@@ -5,7 +5,8 @@ from SERVICES.titulnikKnagu import *
 from SERVICES.GetDir import *
 from SERVICES.GptResponse import *
 from SERVICES.AddStudent import addStudent
-
+from SERVICES.check_session import session_calculation
+from django.http import HttpResponse
 stop = 0
 new_dict = {}
 
@@ -25,6 +26,7 @@ def get_data(request):
         form = Autorization(request.POST)
         login = form['login'].value()
         password = form['password'].value()
+        global out_info
         out_info = parseLK(username=login, password=password, course=1)
         name_student = out_info["student"]
         group = out_info["group"]
@@ -40,16 +42,20 @@ def get_data(request):
 
     all_subjects_name = GetDir()
     global new_dict
+
     for key, value_list in all_subjects_name.items():
         new_dict[key] = value_list
 
     stop = 1
-
-    return render(request, 'way.html')
+    sesia = out_info["sesia"]
+    sesia = session_calculation(str(sesia).strip())
+    return render(request, "way.html", {"sesia": sesia})
 
 
 def way(request):
-    return render (request,"way.html")
+    sesia = out_info["sesia"]
+    sesia = session_calculation(str(sesia).strip())
+    return render (request,"way.html", {"sesia":sesia})
 
 
 def gen(request):
@@ -62,17 +68,18 @@ def list_of_info(request):
     return render(request, "list.html", {"theme":resp})
 
 
-
-
-
 def templ(request):
     return render(request, 'templ.html', {"new_dict":new_dict})
 
 
+def todo(request):
+
+    return render(request,"todo.html",{"new_dict":new_dict})
 
 
-
-
+def add(request):
+    print("Добавляем задачу в БД")
+    return HttpResponse()
 
 
 

@@ -57,6 +57,18 @@ def parseLK(username: str, password: str, course: int) -> dict:
     name_student = (soup.find("h6" , class_='mt-1').text).split(" ")
     name_student = f"{name_student[0]} {name_student[1]}"
     group = (soup.find("h5" , class_='ms-2 my-auto').text).split(" ")
+
+    # driver.get("https://student.knastu.ru/schedule#1")
+    # time.sleep(10)
+    # html2 = driver.page_source
+    # soup2 = BeautifulSoup(html2, "html.parser")
+    # raspisani = soup2.find('div', class_='fc-left')
+    # print(raspisani)
+
+    sesiya =(str((soup.find("article" , class_="ms-3 d-flex bg-body rounded-4 px-3 py-2 shadow-ssm h-100 align-items-center")).text.strip()).split("Период сессии"))[1]
+    sesiya = sesiya.split(" - ")
+    sesiya = str(sesiya[0])
+    return_dict["sesia"] = sesiya
     return_dict["marks"] = marks
     return_dict["student"] = name_student
     return_dict["group"] = group[1]

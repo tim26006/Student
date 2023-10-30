@@ -9,5 +9,7 @@ class Student(models.Model):
   group = models.CharField(max_length=10)
 
 
-
+class Todo(models.Model):
+  sub = models.CharField(max_length=20)
+  task = models.CharField(max_length=100)
 
